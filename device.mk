@@ -4,6 +4,19 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# HALs
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := lahaina
+
+# Kernel Binary
+TARGET_KERNEL_DIR ?= device/nothing/Spacewar-kernel
+LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
+
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+
+# Kernel Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := device/nothing/Spacewar-kernel/kernel-headers
+
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
