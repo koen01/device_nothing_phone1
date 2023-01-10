@@ -8,6 +8,11 @@
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := lahaina
 
+# Display
+$(call inherit-product, hardware/qcom-caf/sm8350/display/config/display-product.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
+
 # Kernel Binary
 TARGET_KERNEL_DIR ?= device/nothing/Spacewar-kernel
 LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
